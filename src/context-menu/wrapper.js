@@ -48,13 +48,11 @@ let ContextMenuWrapper = React.createClass({
         monitor.hideMenu();
     },
     getMenuPosition(x, y) {
-        let scrollX = document.documentElement.scrollTop,
-            scrollY = document.documentElement.scrollLeft,
-            { innerWidth, innerHeight } = window,
+        let { innerWidth, innerHeight } = window,
             rect = this.menu.getBoundingClientRect(),
             menuStyles = {
-                top: y + scrollY,
-                left: x + scrollX
+                top: y,
+                left: x
             };
 
         if (y + rect.height > innerHeight) {
